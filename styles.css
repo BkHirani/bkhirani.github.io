@@ -218,6 +218,7 @@ section {
 
 .experience-card,
 .education-card,
+.project-card,
 .skill-category {
     background: var(--white);
     padding: 2rem;
@@ -232,6 +233,7 @@ section {
 
 .experience-card::before,
 .education-card::before,
+.project-card::before,
 .skill-category::before {
     content: '';
     position: absolute;
@@ -246,6 +248,7 @@ section {
 }
 
 .experience-card:hover,
+.project-card:hover,
 .education-card:hover,
 .skill-category:hover {
     transform: translateY(-10px);
@@ -253,12 +256,14 @@ section {
 }
 
 .experience-card:hover::before,
+.project-card:hover::before,
 .education-card:hover::before,
 .skill-category:hover::before {
     opacity: 0.05;
 }
 
 .experience-card h3,
+.project-card h3,
 .education-card h3 {
     color: var(--primary);
     margin-bottom: 0.5rem;
@@ -293,6 +298,68 @@ section {
 .skill-category p {
     position: relative;
     z-index: 1;
+}
+
+/* Projects Section Styles */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+.project-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+.project-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.project-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-card ul li::before {
+    content: '•';
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--gradient);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.project-link i {
+    font-size: 0.9rem;
 }
 
 .contact-container {
